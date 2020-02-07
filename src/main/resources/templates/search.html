@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>本を検索する</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  </head>
+  <body>
+    <form method="post" name="form1">
+      <table>
+        <tr><td>本のタイトル : <input type="text" class="form-control" id="title" name="title" th:value="${title}"/></td></tr>
+        <tr><td>著者名 : <input type="text" class="form-control" id="name" name="name" th:value="${name}"/></td></tr>
+        <tr><td><input type="submit" value="検索"/></td></tr>
+      </table>
+    </form>
+    <div th:if="${resultSize > 0}"><label th:text="${resultSize}"></label>件</div>
+    <table border="1" th:if="${resultSize > 0}">
+      <tr>
+        <td>本のタイトル</td>
+        <td>著者名</td>
+      </tr>
+      <tr th:each="data : ${result}">
+        <td th:text="${data.title}"/>
+        <td th:text="${data.name}"/>
+      </tr>
+    </table>
+  </body>
+</html>

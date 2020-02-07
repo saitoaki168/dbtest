@@ -14,8 +14,15 @@ public class Idol {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    @Column(name="age")
-    private Integer age;
+
+    @Column(name="arrival")
+    private Integer arrival;
+
+    @Column(name="title")
+    private String title;
+
+    @Column(name="genre")
+    private String genre;
 
     // getter and setter
     public Integer getId() {
@@ -30,10 +37,22 @@ public class Idol {
     public void setName(String name) {
         this.name = name;
     }
-    public Integer getAge() {
-        return age;
+    public Integer getArrival() {
+        return arrival;
     }
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setAge(Integer arrival) {
+        this.arrival = arrival;
+    }
+    public String getGenre() {
+        return genre;
+    }
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
