@@ -5,22 +5,31 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   </head>
   <body>
-    <form method="post" name="form1">
+    <form method="post" name="form1" accept-charset="UTF-8">
       <table>
-        <tr><td>本のタイトル : <input type="text" class="form-control" id="title" name="title" th:value="${title}"/></td></tr>
-        <tr><td>著者名 : <input type="text" class="form-control" id="name" name="name" th:value="${name}"/></td></tr>
+        <tr><td>ID : <input type="text" class="form-control" id="id" name="id" th:value="${id}"/></td></tr>
+        <tr><td>本のタイトル : <input type="text" class="form-control" id="titlename" name="titlename" th:value="${titlename}"/></td></tr>
+        <tr><td>著者名 : <input type="text" class="form-control" id="writer" name="writer" th:value="${writer}"/></td></tr>
+        <tr><td>ジャンル : <input type="text" class="form-control" id="genre" name="genre" th:value="${genre}"/></td></tr>
+        <tr><td>入荷日 : <input type="text" class="form-control" id="arrival" name="arrival" th:value="${arrival}"/></td></tr>
         <tr><td><input type="submit" value="検索"/></td></tr>
       </table>
     </form>
     <div th:if="${resultSize > 0}"><label th:text="${resultSize}"></label>件</div>
     <table border="1" th:if="${resultSize > 0}">
       <tr>
+        <td>ID</td>
         <td>本のタイトル</td>
         <td>著者名</td>
+        <td>ジャンル</td>
+        <td>入荷日</td>
       </tr>
       <tr th:each="data : ${result}">
-        <td th:text="${data.title}"/>
-        <td th:text="${data.name}"/>
+        <td th:text="${data.id}"/>
+        <td th:text="${data.titlename}"/>
+        <td th:text="${data.writer}"/>
+        <td th:text="${data.genre}"/>
+        <td th:text="${data.arrival}"/>
       </tr>
     </table>
   </body>

@@ -2,8 +2,6 @@ package test;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,36 +9,44 @@ import javax.persistence.Table;
 @Table(name = "idol")
 public class Idol {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private String name;
-
-    @Column(name="arrival")
-    private Integer arrival;
-
-    @Column(name="title")
-    private String title;
+    @Column(name="id")
+    private String id;
 
     @Column(name="genre")
     private String genre;
 
+    @Column(name="arrival")
+    private String arrival;
+
+    @Column(name="titlename")
+    private String titlename;
+
+    @Column(name="writer")
+    private String writer;
+
     // getter and setter
-    public Integer getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
-    public String getName() {
-        return name;
+    public String getTitlename() {
+        return titlename;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setTitlename(String titlename) {
+        this.titlename = titlename;
     }
-    public Integer getArrival() {
+    public String getWriter() {
+        return writer;
+    }
+    public void setWriter(String writer) {
+        this.writer = writer;
+    }
+    public String getArrival() {
         return arrival;
     }
-    public void setAge(Integer arrival) {
+    public void setArrival(String arrival) {
         this.arrival = arrival;
     }
     public String getGenre() {
@@ -48,11 +54,5 @@ public class Idol {
     }
     public void setGenre(String genre) {
         this.genre = genre;
-    }
-    public String getTitle() {
-        return title;
-    }
-    public void setTitle(String title) {
-        this.title = title;
     }
 }

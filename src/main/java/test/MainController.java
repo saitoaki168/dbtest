@@ -2,7 +2,9 @@ package test;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,11 +13,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import test.Idol;
 import test.repository.IdolRepository;
-import test.repository.IdolService;
+import test.repository.service.IdolService;
 
-
+@ComponentScan
 @Controller
+
 public class MainController {
+
         @Autowired
         IdolRepository repository;
         
@@ -32,26 +36,21 @@ public class MainController {
         @Autowired
         public IdolService service;
 
-        @RequestMapping(method = RequestMethod.GET)
-        public String search() {
-            return "search";
-        }
+        @RequestMapping(value="/search", method = RequestMethod.GET)
+            public String check() {
+                return "/search";
+            }
 
-
-        @RequestMapping(method = RequestMethod.POST)
-        private ModelAndView search(ModelAndView mav
-            , @RequestParam("title") String title, @RequestParam("name") String name, @RequestParam("genre") String genre, @RequestParam("arrival") Integer arrival) {
+        @RequestMapping(value="/search", method = RequestMethod.POST)
+        public ModelAndView search(ModelAndView mav, @RequestParam("genre") String genre, @RequestParam("arrival") String arrival) {
             mav.setViewName("search");
-            mav.addObject("title", title);
-            mav.addObject("name", name);
             mav.addObject("genre", genre);
             mav.addObject("arrival", arrival);
-            List<Idol> result = service.search(title, name, genre, arrival);
+            List<Idol> result = service.search(genre, arrival);
             mav.addObject("result", result);
             mav.addObject("resultSize", result.size());
             return mav;
         }
-        
 
         @RequestMapping("/show")
         private ModelAndView index(ModelAndView mav) {
@@ -60,6 +59,7 @@ public class MainController {
             mav.addObject("data", list);
             return mav;
         }
+
 
 }
 
