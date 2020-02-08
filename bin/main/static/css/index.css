@@ -9,6 +9,11 @@ form, input, div {
 li {
   list-style: none;
 }
+a {
+    text-decoration: none;
+}
+
+
 /* ここまで*/
 
 .warapper {
@@ -64,4 +69,12 @@ li {
     height: 100%;
     width:30%;
     background-color: brown;
+    display:inline-block;
+}
+
+a {
+    display:block;
+    width:100%;
+    height:100%;
+    text-decoration: none;
 }

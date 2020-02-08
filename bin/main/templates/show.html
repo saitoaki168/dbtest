@@ -5,21 +5,25 @@
 <title>INDEXページ</title>
 </head>
 <body>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>名前</th>
-<th>年齢</th>
-</tr>
-</thead>
-<tbody>
-<tr th:each="data:${data}">
-<td th:text="${data.id}"></td>
-<td th:text="${data.name}"></td>
-<td th:text="${data.age}"></td>
-</tr>
-</tbody>
-</table>
+    <table>
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>タイトル</th>
+    <th>著者</th>
+    <th>ジャンル</th>
+    <th>入荷日</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="data:${data}">
+    <td th:text="${data.id}"></td>
+    <td th:text="${data.titlename}"></td>
+    <td th:text="${data.writer}"></td>
+    <td th:text="${data.genre}"></td>
+    <td th:text="${data.arrival}"></td>
+    </tr>
+    </tbody>
+    </table>
 </body>
 </html>
