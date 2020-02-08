@@ -3,40 +3,32 @@
 <head>
 <meta charset="UTF-8"></meta>
 <title>ジャンルから探す</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/js/genre.js" th:src="@{/js/genre.js}"></script>
+<link href="/css/genre.css" th:href="@{/css/genre.css}" rel="stylesheet"></link>
 </head>
 <body>
-    <table>
-        <thead>
-        <tr>
-        <th>ジャンル</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="data:${data}">
-        <td th:text="${data.writer}"></td>
-        </tr>
-        </tbody>
-    </table>
+        <div class="search_item is-active" data-group="">ALL</div>
+        <ul class="search" th:each="data:${data}">
+        <ls class="search_item" th:data-group="${data.tid}" th:text="${data.teamname}"></ls>
+        </ul>
 
-    <table>
-        <thead>
-        <tr>
-        <th>ID</th>
-        <th>タイトル</th>
-        <th>著者</th>
-        <th>ジャンル</th>
-        <th>入荷日</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="data:${data}">
-        <td th:text="${data.id}"></td>
-        <td th:text="${data.titlename}"></td>
-        <td th:text="${data.writer}"></td>
-        <td th:text="${data.genre}"></td>
-        <td th:text="${data.arrival}"></td>
-        </tr>
-        </tbody>
-    </table>
+        <table>
+            <thead>
+            <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>著者</th>
+            <th>ジャンル</th>
+            <th>入荷日</th>
+            </tr>
+            </thead>
+        </table>
+            <ul class="list" th:each="idata:${idata}">
+            <ls class="list_item" th:data-group="${idata.teamid}" th:text="${idata.id}"></ls>
+            <ls class="list_item" th:data-group="${idata.teamid}" th:text="${idata.arrival}"></ls>
+            <ls class="list_item" th:data-group="${idata.teamid}" th:text="${idata.genre}"></ls>
+            <ls class="list_item" th:data-group="${idata.teamid}" th:text="${idata.writer}"></ls>
+            <ls class="list_item" th:data-group="${idata.teamid}" th:text="${idata.titlename}"></ls>
+            </ul>
 </body>
-</html>

@@ -42,5 +42,4 @@ public class IdolRepositoryCustomImpl implements IdolRepositoryCustom {
     return query.getResultList();
   }
 
-  
 }

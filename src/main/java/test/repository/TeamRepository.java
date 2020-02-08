@@ -1,7 +1,7 @@
 package test.repository;
-import test.Idol;
+import test.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IdolRepository extends JpaRepository<Idol, Integer> {
+public interface TeamRepository extends JpaRepository<Team, Integer> {
 
 }
