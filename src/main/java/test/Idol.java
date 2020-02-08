@@ -2,7 +2,10 @@ package test;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +27,13 @@ public class Idol {
     @Column(name="writer")
     private String writer;
 
+    @Column(name="teamid")
+    private String teamid;
+
+    @ManyToOne //多
+    @JoinColumn(name="teamid", referencedColumnName = "tid", insertable=false, updatable=false)
+    private Team team;
+    
     // getter and setter
     public String getId() {
         return id;
@@ -54,5 +64,11 @@ public class Idol {
     }
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+    public String getTeamid() {
+        return teamid;
+    }
+    public void setTeamid(String teamid) {
+        this.teamid = teamid;
     }
 }

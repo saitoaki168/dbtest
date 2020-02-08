@@ -2,7 +2,6 @@ package test;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -13,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import test.Idol;
 import test.repository.IdolRepository;
+import test.repository.TeamRepository;
 import test.repository.service.IdolService;
 
 @ComponentScan
@@ -60,6 +60,18 @@ public class MainController {
             return mav;
         }
 
+        @Autowired
+        TeamRepository trepository;
 
+        @RequestMapping("/genresearch")
+        private ModelAndView genresearch(ModelAndView mav) {
+            mav.setViewName("genresearch");
+            Iterable<Team> list = trepository.findAll();
+
+            Iterable<Idol> ilist = repository.findAll();
+            mav.addObject("idata", ilist);
+            mav.addObject("data", list);
+            return mav;
+        }
 }
 
