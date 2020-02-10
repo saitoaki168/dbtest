@@ -33,5 +33,3 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-
-defaultTasks "clean", "build"
