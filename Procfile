@@ -1,0 +1,1 @@
+web: java -jar target/yohebooks.jar --server.port=${PORT}
