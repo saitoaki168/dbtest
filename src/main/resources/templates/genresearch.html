@@ -8,11 +8,15 @@
 <link href="/css/genre.css" th:href="@{/css/genre.css}" rel="stylesheet"></link>
 </head>
 <body>
-        <div class="search_item is-active" data-group="">ALL</div>
+    <div class="hedder">
+        <p>Yohele</p><a href="/" class="links">topに戻る</a>
+    </div>
+    <div class="wapper">
+        <div class="box">
         <ul class="search" th:each="data:${data}">
         <ls class="search_item" th:data-group="${data.tid}" th:text="${data.teamname}"></ls>
         </ul>
-
+    </div>
         <table>
             <thead>
             <tr>
@@ -23,12 +27,13 @@
             <th>入荷日</th>
             </tr>
             </thead>
+            <tr class="list" th:each="idata:${idata}">
+            <td class="list_item" th:data-group="${idata.teamid}" th:text="${idata.id}"></td>
+            <td class="list_item" th:data-group="${idata.teamid}" th:text="${idata.arrival}"></td>
+            <td class="list_item" th:data-group="${idata.teamid}" th:text="${idata.genre}"></td>
+            <td class="list_item" th:data-group="${idata.teamid}" th:text="${idata.writer}"></td>
+            <td class="list_item" th:data-group="${idata.teamid}" th:text="${idata.titlename}"></td>
+            </tr>
         </table>
-            <ul class="list" th:each="idata:${idata}">
-            <ls class="list_item" th:data-group="${idata.teamid}" th:text="${idata.id}"></ls>
-            <ls class="list_item" th:data-group="${idata.teamid}" th:text="${idata.arrival}"></ls>
-            <ls class="list_item" th:data-group="${idata.teamid}" th:text="${idata.genre}"></ls>
-            <ls class="list_item" th:data-group="${idata.teamid}" th:text="${idata.writer}"></ls>
-            <ls class="list_item" th:data-group="${idata.teamid}" th:text="${idata.titlename}"></ls>
-            </ul>
+    </div>
 </body>

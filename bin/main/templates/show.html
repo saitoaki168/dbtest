@@ -2,16 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"></meta>
-<title>INDEXページ</title>
+<title>新入荷</title>
+<link href="/css/show.css" th:href="@{/css/show.css}" rel="stylesheet"></link>
 </head>
 <body>
+<p>新入荷</p>
+<div class="wapper">
     <table>
     <thead>
     <tr>
-    <th>ID</th>
-    <th>タイトル</th>
-    <th>著者</th>
-    <th>ジャンル</th>
+    <th class="id">ID</th>
+    <th class="noid">タイトル</th>
+    <th class="noid">著者</th>
+    <th class="noid">ジャンル</th>
     <th>入荷日</th>
     </tr>
     </thead>
@@ -25,5 +28,6 @@
     </tr>
     </tbody>
     </table>
+</div>
 </body>
 </html>

@@ -11,6 +11,8 @@ li {
 }
 a {
     text-decoration: none;
+    color: white;
+    font-family: 'Hiragino Maru Gothic ProN';
 }
 
 
@@ -25,7 +27,11 @@ a {
     height: 200px;
     font-size: 100px;
     font-weight: bold;
-    background-color: antiquewhite;
+    padding-left: 30px;
+}
+.pic0{
+    width: 35%;
+    margin-bottom: 0px;
 }
 
 .main {
@@ -39,18 +45,35 @@ a {
 }
 
 .main1__search {
-    color: aqua;
     height: calc(100% - 30px);
     width: calc(60% - 30px);
-    background-color: black;
+    background-color:#008000;
     margin-right: 30px;
+    border-radius: 30px;
+    text-align: center; 
+    font-size:60px;
+}
+
+.pic1{
+    width: 50%;
+    padding-top: 10px;
+}
+.pic2{
+    width: 40%;
+    padding-top: 30px;
+}
+.pic3{
+    width: 20%;
 }
 
 .main1__genre {
     height: 70%;
     width: 40%;
-    background-color: blue;
+    background-color: #008080;
     margin:auto 0 ;
+    border-radius: 30px;
+    text-align: center;
+    font-size:40px;
 }
 
 .main2 {
@@ -61,15 +84,22 @@ a {
 .main2__show {
     height: 100%;
     width: calc(70% - 30px);
-    background-color: blueviolet;
+    background-color: #9acd32;
     margin-right: 30px;
+    border-radius: 30px;
+    text-align: center;
+    font-size:30px;
 }
 
 .main2__map {
     height: 100%;
     width:30%;
-    background-color: brown;
+    background-color: #6b8e23;
     display:inline-block;
+    border-radius: 30px;
+    text-align: center;
+    font-size:30px;
+    line-height: 200px;
 }
 
 a {
