@@ -1,1 +1,1 @@
-web: java -Dspring.profiles.active=prod -Dserver.port=$PORT $JAVA_OPTS -jar target/dictation-0.0.1-SNAPSHOT.jar
+web: java -jar build/libs/dbtest-0.0.1-SNAPSHOT.jar --server.port=$PORT
