@@ -1,5 +1,5 @@
 # 書店の書籍検索サイト
-![トップページ](https://lh6.googleusercontent.com/SvURigAqHJmQqY1VCSTXhaHAyBmwqKaEp9zGqrzDBPiXkQCl8tCul_av8QVK8_C9VU8CFawHytngVKk-UXAYUjMf8G1FpnCSCIAzwl9q9skgY_j7Moc=w1280)
+![トップページ](https://lh3.googleusercontent.com/LqCKCYp339R4mto_1WY2_lFdBGDGutXxdV6W_x7KbWLTl-ZQpsHyBt995WzIh2MpJPP23A0pBeMJ2OTnVKF4zllrAqKoc6_-3h-_l18vEP5UIhj6Zow=w1280)
 
 ## アプリ名
 Yohele（葉柄書店書籍検索サイト）
@@ -9,19 +9,19 @@ Yohele（葉柄書店書籍検索サイト）
 ### １．著者名や書籍名での検索機能
 　入荷済みの本を書籍名または筆者、あるいはその両方で検索する。
   
-![書籍検索ページ](https://lh4.googleusercontent.com/rxDTQVkUuopXQKqAjh12ZViu48sdmb2j_f3jA5Im-TTDVKqdhYqkn3GuihNMuuJ8dCa00VK8rYoabpVYQKnZ1DH8kXIMJqiBOMTYer2BZ-WXalMtmp_E=w1280)
+![書籍検索ページ](https://lh6.googleusercontent.com/SG5nrUxLTIwn3z4vs0L7Wue52vvgBPdGHg-9PcRfrx0DZzElu15wi7BwlTiwtmdAvaO4S60jHPqrFNBwSgIElYRIt4ZaYqdqix4uaIZbBaA4OEtX44Ow=w1280)
 
 
 ### ２．ジャンル毎の書籍一覧表示機能
 　入荷済みの本をジャンルで絞って表示する。
   
-![ジャンル別検索ページ](https://lh6.googleusercontent.com/rb3EWiVcG4ThFu_BxsRevvQP9lubsdScE21Y1ZekQ70mDwTquD_k523XuJCxXv1Tt94HdcrkVRUKCcTytBLNZlm5LyLHVJyIivX7XQkb3Rbl6Ll-Xg=w1280)
+![ジャンル別検索ページ](https://lh5.googleusercontent.com/aYy8wKHCimD36f9J9HRMACF6NiPSBk-ftOctitIbpUQBInnegjC_qaN0ehOa881XkWYP4-pApp2LUGvdNjAGQI-zSRWxxB7kwHLC03Q3_Ajm_SGAmg=w1280)
 
 
 ### ３．全書籍の一覧表示
 　入荷済みの本を全て確認する。
 
-![新入荷ページ](https://lh4.googleusercontent.com/Zntfg02RcCYe6OPiTAIwR_1npOev2NTYja19-_Wa_7E2EhOfhMjO9jVK2LyPgLHP4pEp-kuUvMvpsj7DcEH9Bi4RLn4FXuyud7vDnDUibRud7FppR8s=w1280)
+![新入荷ページ](https://lh5.googleusercontent.com/XQOJmY_VJqx0SRnRMIPPAG6jb_2f6auSsWtAhUEZHJ1hQGeztCwaxUiGkvEj-dothpSwonWF3PFks_cw-7siNzkASs9-4duXe2loot5SyUYoMuHu6VM=w1280)
 
 
 ### 4．店内地図
@@ -62,14 +62,14 @@ Yohele（葉柄書店書籍検索サイト）
 
 　
 ## 制作背景
-　検索機能をメインとしたサイトを作成したかった。
-
+　前職にて、システムの一番の強みは「大量の情報を正確に扱えること」だと感じていました。前職はDTPオペレータという本の印刷データの作成です。本は何百もの頁によって成り立っているため、例えば各ページのタイトルを太字にしたい場合など、当然手作業では膨大な作業になります。また数が増えれば増えるほどミスの確率はあがります。そんな状況を改善してくれていたのが、システムでした。システムは一瞬かつ漏れなく作業をしてくれるため、とても頼りになる存在です。
+　そんな「大量の情報を正確に扱える強み」を生かせるものを作成したいと考え、本屋の検索アプリを作成いたしました。
 
 ## 工夫したポイント
-　DB間に関係をもたせようとしましたが実力不足により上手く行かず、ジャンル検索ページではjavascriptでの絞り込みを使用して作成しました。
- 独学のためまだまだ学習不足ではありますが、今身につけている技術でできることの幅を広げることができました。
+　ジャンルから書籍を絞り込めるようにするために、DB間に関係をもたせようとしましたが、実力不足により上手くできませんでした。しかし、メインとなる機能の一つのため諦めきれず、DB間に繋がりがなくても実装できる手段に切り替えて作成しました。javascriptで絞り込んでいます。
+　独学のためまだまだ学習不足ではありますが、今身につけている技術でできることの幅を広げることはできました。
 
 
 ## 今後の実装予定
 * デプロイ
-* 管理者ページにて書籍の登録を可能にする
+* DBへのデータの挿入が直接入れ込む以外に存在しないため、管理者ページを作成し、そこから書籍の登録を可能にする
