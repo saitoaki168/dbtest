@@ -1,4 +1,4 @@
-/* CSSのリセット（消さないでください） */
+/* CSSのリセット */
 html, body,
 ul, ol, li,
 h1, h2, h3, h4, h5, h6, p,
@@ -107,4 +107,9 @@ a {
     width:100%;
     height:100%;
     text-decoration: none;
+}
+
+.admin {
+    color: black;
+    text-align: right;
 }

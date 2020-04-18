@@ -5,12 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import test.Idol;
 import test.repository.IdolRepository;
 import test.repository.TeamRepository;
 import test.repository.service.IdolService;
@@ -73,5 +77,19 @@ public class MainController {
             mav.addObject("data", list);
             return mav;
         }
-}
 
+        @GetMapping("new")
+        public String newIdol(@ModelAttribute("idol") Idol idol, Model model) {
+            return "new";
+        }
+        
+        @PostMapping
+        public String create(@ModelAttribute("idol") @Validated Idol idol, BindingResult result, Model model) {
+          if (result.hasErrors()) {
+            return "new";
+          } else {
+            IdolService.save(idol);
+            return "redirect:/idol";
+          }
+        }
+}

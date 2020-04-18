@@ -1,7 +1,9 @@
 package test.repository.service;
  
 import java.util.List;
- 
+
+import javax.transaction.Transactional;
+
 import test.Idol;
 import test.repository.IdolRepository;
 import test.repository.IdolRepositoryCustom;
@@ -24,6 +26,16 @@ public class IdolService {
       result = repositoryCustom.search(genre, arrival);
     }
     return result;
+  }
+
+  @Transactional
+  public void save(Idol idol) {
+    idolMapper.save(idol);
+  }
+
+  @Transactional
+  public void update(Idol idol) {
+    idolMapper.update(idol);
   }
 
 }
